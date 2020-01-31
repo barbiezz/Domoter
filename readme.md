@@ -11,6 +11,7 @@
 The software aims to make the configuration totally customizable. It is in fact possible to define your own applications for the control of some types of devices in all simplicity.
 
 Among the main elements of the application we have:
+
 • User and home automation device authentication;
 • Creation of an IoT gateway for efficient communication;
 • Creation of applications;
