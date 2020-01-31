@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateAppsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('apps', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->index('gatId');
+            $table->foreign('gatId')->references('id')->on('gateways')->onDelete('cascade');
+            $table->string('name');
+            $table->text('description');
+            $table->text('filter');
+            $table->timestamps();
+        });
+        
+        Schema::table('apps', function (Blueprint $table) {
+            $table->apps_gatId_foreign('gatId')->references('id')->on('gateways');
+        }); 
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('apps');
+    }
+}

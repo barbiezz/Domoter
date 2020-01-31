@@ -1,0 +1,62 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header"> Edit your gateway: </div>
+
+					 <div class="container">
+					 			<br>
+            			   <a class="btn btn-primary" href="{{route('home')}}"> Go back to HOME </a>
+        			 </div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    
+                    @if ($errors->any())
+    					  <div class="alert alert-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                        @foreach ($errors->all() as $error)
+                               <li>{{ $error }}</li>
+                        @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <form method="post" action="{{route('update',$gateways[0]->id)}}">
+                    <div class="form-group">
+                          <input type="hidden" name="_token" id="csrf" value="{{Session::token()}}">
+                          <label for="name">Name:</label> 
+                          <input type="text" class="form-control" id="name" placeholder="Enter Name" value="{{$gateways[0]->name}}" name="name">
+                    </div>
+                    <div class="form-group">
+                          <label for="mqtt_server">MQTTAddress:</label>
+                          <input type="text" class="form-control" id="mqtt_server" placeholder="Enter MQTTAddress" value="{{$gateways[0]->mqtt_server}}" name="mqtt_server">
+                    </div>
+                    <div class="form-group">
+                          <label for="mqtt_port">MQTTPort:</label>
+                          <input type="text" class="form-control" id="mqtt_port" placeholder="Enter MQTTPort" value="{{$gateways[0]->mqtt_port}}" name="mqtt_port">
+                    </div>
+                    <div class="form-group">
+                          <label for="mqtt_username">MQTTusername:</label>
+                          <input type="username" class="form-control" id="mqtt_username" placeholder="Enter MQTTUsername" value="{{$gateways[0]->mqtt_username}}" name="mqtt_username">
+                    </div>
+                    <div class="form-group">
+                          <label for="mqtt_password">MQTTpassword:</label>
+                          <input type="password" class="form-control" id="mqtt_password" placeholder="Enter Password" value="{{$gateways[0]->mqtt_password}}" name="mqtt_password">
+                    </div>
+
+   					  <button type="submit" class="btn btn-primary" id="butsave">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

@@ -1,0 +1,17 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: salman
+ * Date: 2/22/19
+ * Time: 1:29 PM
+ */
+
+return [
+
+    'host' => env('mqtt_host','191.168.1.9'),
+    'password' => env('mqtt_password','barbara'),
+    'username' => env('mqtt_username','barbara'),
+    'certfile' => env('mqtt_cert_file',''),
+    'port' => env('mqtt_port','1884'),
+    'debug' => env('mqtt_debug',true) //Optional Parameter to enable debugging set it to True
+];
