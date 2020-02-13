@@ -34,9 +34,9 @@ git clone https://github.com/barbiezz/Domoter.git
 
 ## Dependencies
 
-- [COMPOSER]
-- [XAMPP] (Apache & Mysql)
-- [PHP]
+- COMPOSER
+- XAMPP (Apache & Mysql)
+- PHP
 
 ## About Laravel
 
