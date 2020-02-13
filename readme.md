@@ -12,27 +12,31 @@ The software aims to make the configuration totally customizable. It is in fact 
 
 Among the main elements of the application we have:
 
-• User and home automation device authentication;
-• Creation of an IoT gateway for efficient communication;
-• Creation of applications;
-• Creation of profile devices and insertion of new devices;
+- User and home automation device authentication;
+- Creation of an IoT gateway for efficient communication;
+- Creation of applications;
+- Creation of profile devices and insertion of new devices;
 
-## About Domoter
+### Domoter
 
-## 1) 
-Each user of the platform has the possibility to login for each registered user, but the procedure for registering new users is accessible only by the administrator and this carries out authentication.
-## 2) 
-The gateway is considered as an entry point from a completely different network: it is a physical device or a program software that passes through a connection point between the cloud and controller, sensors and smart devices. 
+- Each user of the platform has the possibility to login for each registered user, but the procedure for registering new users is accessible only by the administrator and this carries out authentication.
+- The gateway is considered as an entry point from a completely different network: it is a physical device or a program software that passes through a connection point between the cloud and controller, sensors and smart devices. 
 A gateway provides a place to pre-provide data locally before sending it to the cloud. In the project, a Raspberry Pi 3B + was used as a gateway device which uses its own WiFi access point to connect to controlled devices. 
 The device that works as a gateway records the information for MQTT communication, a publish/subscriber communication protocol based on the exchange of messages between two clients through an MQTT server that acts as a messaging broker.
-## 3) 
-The applications, on the other hand, can be modulated on specific types of devices and can activate controlled commands based on the functions associated with the device-profile, device profile which includes the information that the device expects and can communicate.
-## 4) 
-To add a new device to the application, simply enter an identification name and the device will be added to the index of registered devices with precise application and operation. For a device to be active and functional, it is necessary to authenticate. Immediately after its creation, it will be possible to exchange a token between the latter and the application itself: in this way, each device can be activated with an activation token which takes place for communication.
-## 5) 
-The experimental tests were used in a python script with the use of the Paho MQTT Python Client library and with an ad hoc firmware for the use of a Sonoff device of the ITEAD line.
-## 6) 
-The app is also available in the cloud version, DomoterCloud and operation is based on that of the local platform, Domoter, with the difference that for assistance a first authentication as a gateway is required by receiving a token for the authentication and authorization of functionalities.
+- The applications, on the other hand, can be modulated on specific types of devices and can activate controlled commands based on the functions associated with the device-profile, device profile which includes the information that the device expects and can communicate.
+- To add a new device to the application, simply enter an identification name and the device will be added to the index of registered devices with precise application and operation. For a device to be active and functional, it is necessary to authenticate. Immediately after its creation, it will be possible to exchange a token between the latter and the application itself: in this way, each device can be activated with an activation token which takes place for communication.
+- The experimental tests were used in a python script with the use of the Paho MQTT Python Client library and with an ad hoc firmware for the use of a Sonoff device of the ITEAD line.
+- The app is also available in the cloud version, DomoterCloud and operation is based on that of the local platform, Domoter, with the difference that for assistance a first authentication as a gateway is required by receiving a token for the authentication and authorization of functionalities.
+
+## Get project
+
+git clone https://github.com/barbiezz/Domoter.git
+
+## Dependencies
+
+- [COMPOSER]
+- [XAMPP] (Apache & Mysql)
+- [PHP]
 
 ## About Laravel
 
